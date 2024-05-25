@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>地理位置示例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主页</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>获取您的地理位置</h1>
-    <button onclick="getLocation()">获取位置</button>
-    <p id="demo"></p>
-
-    <script>
-        function getLocation() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showPosition, showError);
-            } else {
-                document.getElementById("demo").innerHTML = "您的浏览器不支持地理定位。";
-            }
-        }
-
-        function showPosition(position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            document.getElementById("demo").innerHTML = "纬度: " + latitude + "<br>经度: " + longitude;
-        }
-
-        function showError(error) {
-            switch (error.code) {
-                case error.PERMISSION_DENIED:
-                    document.getElementById("demo").innerHTML = "用户拒绝了地理位置请求。";
-                    break;
-                case error.POSITION_UNAVAILABLE:
-                    document.getElementById("demo").innerHTML = "无法获取地理位置信息。";
-                    break;
-                case error.TIMEOUT:
-                    document.getElementById("demo").innerHTML = "获取地理位置信息超时。";
-                    break;
-                case error.UNKNOWN_ERROR:
-                    document.getElementById("demo").innerHTML = "发生了未知错误。";
-                    break;
-            }
-        }
-    </script>
+    <div class="container">
+        <h1>欢迎来到我的主页</h1>
+        <p>点击以下链接访问 1.html:</p>
+        <a href="1.html">前往 1.html</a>
+    </div>
 </body>
 </html>
